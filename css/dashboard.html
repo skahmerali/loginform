@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WELCOM TO YOUR PROFILE</h1>
+    
+   <p id="Rname"></p>
+   <p id="Remail"></p>
+   <p id="Rpassword"></p>
+
+<button onclick="abcd()"> log out</button>
+
+
+
+
+    <script>
+        
+        var names = JSON.parse(localStorage.getItem("name"))
+        var emails = JSON.parse(localStorage.getItem("email"))
+        var passwords = JSON.parse(localStorage.getItem("password"))
+
+        // var resultName=document.getElementById("Rname").value;
+        // var resultEmail=document.getElementById("Remail").value;
+        // var resultPassword=document.getElementById("Rpassword").value;
+
+       document.getElementById("Rname").innerHTML = names ;
+       document.getElementById("Rpassword").innerHTML = passwords ;
+       document.getElementById("Remail").innerHTML = emails ;
+        console.log(names)
+        
+        function abcd(){
+        localStorage.removeItem("name")
+        localStorage.removeItem("email")
+        localStorage.removeItem("password")
+        window.location.href = "./login.html"
+        }
+
+
+    </script>
+</body>
+</html>
